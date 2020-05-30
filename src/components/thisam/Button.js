@@ -25,7 +25,7 @@ export const Button = props => {
       {...rest}
     >
       <Box {...{ buttonWidth }}>
-        <Lines {...{ buttonWidth, barColor, isActive }} />
+        <Lines className="linescol" {...{ buttonWidth, barColor, isActive }} />
       </Box>
     </StyledButton>
   )

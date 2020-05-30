@@ -1,5 +1,5 @@
 $main-back: rgb(16, 16, 16);
-$main-font-col: rgb(246, 246, 246);
+$main-font-col: hsl(82,39%,30%);
 $headerNav-back: rgba(169, 169, 169, 0.98);
 $third-header-size: 25px;
 $second-header-size: 15px;
@@ -12,21 +12,21 @@ $sneakyLinear: linear-gradient(
   );
 $varela-grey: rgb(169, 169, 169);
 $varela-blue: rgb(32, 141, 167);
-$link-hover-col: rgb(144, 242, 252);
+$mainPink: #bc032b;
 $caption-size: 34px;
-$header-back: rgb(216, 216, 216);
+$header-back: rgb(255, 255, 255);
 $main-pic: $header-back url("/video/Pexels Videos 2675511.mp4") 0 bottom no-repeat;
 $footer-font-col: hsl(0, 0%, 35%);
 $footer-caption-col: hsl(0, 0%, 19%);
 $arial: Arial, Helvetica, sans-serif;
 $oswald: "Oswald", Arial, Helvetica, sans-serif;
-$button-col: hsl(0, 0%, 56%);
+$button-col: hsl(0, 0%, 56%); 
 
 // BREAKPOINTS
 
-$large: "only screen and (max-width: 1370px)";
-$medium: "only screen and (max-width: 900px)";
-$small: "only screen and (max-width: 430px)";
+$large: "only screen and (max-width : 1370px)";
+$medium: "only screen and (max-width : 812px)";
+$small: "only screen and (max-width : 430px)";
 
 @keyframes hovering {
   0% {
@@ -57,7 +57,7 @@ body,
 }
 
 a {
-  color: $main-font-col !important;
+  color: $main-back !important;
   text-decoration: none;
   transition: all .2s ease;
   display: inline-block;
@@ -79,6 +79,13 @@ a {
 
       &::after {
           background: $main-font-col;
+
+          @media #{$small} {
+            background-color: none;
+            border: none;
+            text-decoration: none;
+            background: transparent;
+          }
       }
   }
 }
@@ -124,7 +131,7 @@ input[type=text], select {
 }
 
 #root {
-  background: $main-back;
+  background: $header-back;
   min-height: 100%;
 }
 
@@ -141,7 +148,7 @@ input[type=text], select {
 
   &__caption {
     font-size: $third-header-size;
-    color: rgba(240, 242, 242, 0.8);
+    color: $main-back;
     transition: all 0.3s ease;
     z-index: 99;
     cursor: pointer;
@@ -149,11 +156,11 @@ input[type=text], select {
     @media #{$large} {
       font-size: $third-header-size;
       margin-top: 7em;
+    }
 
-      &:hover {
-        color: $link-hover-col;
-        font-weight: lighter;
-      }
+    @media #{$medium} {
+      font-size: $third-header-size;
+      margin-top: 7em;
     }
 
     @media #{$small} {
@@ -162,15 +169,18 @@ input[type=text], select {
     }
 
     &:hover {
-      color: $link-hover-col;
+      color: $main-font-col;
       font-weight: lighter;
+      color: $mainPink;
+      font-weight: lighter;
+      
     }
   }
 
   &__caption-hint {
     text-align: right;
     font-size: 10px;
-    color: rgba(240, 242, 242, 0.8);
+    color: $main-back;
     // z-index: 99;
 
     @media #{$small} {
@@ -196,10 +206,10 @@ input[type=text], select {
     }
 
     &:hover {
-      background: url("/img/scrollHover.png") no-repeat center !important;
+      background: url("/img/scrollHover.png") no-repeat center;
 
       @media #{$medium} {
-        background: url("/img/scrollHover.png") no-repeat center !important;
+        background: url("/img/scrollHover.png") no-repeat center;
   
       }
     }
@@ -258,17 +268,37 @@ input[type=text], select {
 }
 
 .logo {
-  width: 280px;
-  height: 140px;
-  background: url("/img/HeroTitle.png") no-repeat;
+  width: 1000px;
+  height: 550px;
+  background: url("/img/logo.png") center repeat no-repeat;
+  background-repeat: no-repeat;
+  background-size: 800px;
   z-index: 1;
+
+  @media #{$medium} {
+    width: 200px;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-size: 220px;
+    z-index: 1;
+  }
+
+  @media #{$small} {
+    margin-left: 2vh;
+    width: 400px;
+    height: 75px !important;
+    background-repeat: no-repeat;
+    background-size: 160px;
+    z-index: 1;
+  }
 }
 
 .flogo {
-  width: 130px;
-  height: 130px;
-  background: url("/img/logo-black.png") repeat no-repeat;
-  z-index: 1;
+  width: 1000px;
+  height: 550px;
+  background: url("/img/Wlogo.png") center repeat no-repeat;
+  background-size: 250px;
+
 }
 
 .main-nav {
@@ -311,7 +341,7 @@ input[type=text], select {
   &__item {
     text-transform: uppercase;
     display: inline-block;
-    color: $main-font-col;
+    color: $main-back;
 
     @media#{$medium} {
       margin: 0 0 20px 0;
@@ -324,7 +354,7 @@ input[type=text], select {
     &.active {
       
       &::after {
-        background: $link-hover-col;
+        background: $mainPink;
       }
     }
   }
@@ -385,11 +415,27 @@ input[type=text], select {
   }
 
   .pro-ref-logo {
-    width: 279px;
-    height: 65px;
-    background: url("/img/logo_enedis_header.png") center center no-repeat;
-    margin-top: 45px;
+    width: 1000px;
+    height: 720px;
+    background: url("/img/Wlogo.png") center center no-repeat;
+    background-size: 700px;
     margin-bottom: 42px;
+
+    @media #{$medium} {
+      width: 250px !important;
+      height: 150px;
+      background-repeat: no-repeat;
+      background-size: 250px;
+      z-index: 1;
+    }
+  
+    @media #{$small} {
+      width: 240px;
+      height: 100px !important;
+      background-repeat: no-repeat !important;;
+      background-size: 200px !important;
+      z-index: 1;
+    }    
   }
 
   h3 {
@@ -736,20 +782,35 @@ input[type=text], select {
 }
 
 .header {
-  background: $headerNav-back;
-  height: 83px;
+  background: $header-back;
+  height: 80px;
   position: relative;
   z-index: 10;
 
+
+
   .logo {
-    margin-top: 15px;
-    width: 138px;
-    background-size: 100%;
+    padding: 0;
+    height: 73px;
+    width: 150px;
+    background-size: 130px;
     margin-right: 85px;
 
+    &::after {
+      background-color: transparent;
+      border: none;
+      text-decoration: none;
+    }
+
+    @media #{$large} {
+      background-size: 120px;
+      margin: 0;
+    }
+
     @media #{$small} {
-      width: 120px;
-      margin: 25 0;
+      background-size: 120px;
+      width: 150px;
+
     }
     
     @media #{$medium} {
@@ -759,13 +820,19 @@ input[type=text], select {
   }
 
   &__logo-link {
-    
+    height: 20px;
+    background-size: 80px;
+
     @media #{$small} {
-      width: 90% !important;
+      width: 10% !important;
     }
 
     @media #{$medium} {
       width: 95%;
+    }
+
+    @media #{$large} {
+      width: 250px;
     }
 
     &::after {
@@ -774,17 +841,18 @@ input[type=text], select {
 }
 
   &__menu {
-    padding-top: 30px !important;
-    color: $link-hover-col;
+    padding: 28px !important;
     text-align: right;
     z-index: 11;
     display: none !important;
 
     @media #{$medium} {
+      color: $main-back;
       display: block !important;
     }
 
     @media #{$small} {
+      color: $main-back;
       display: block !important;
     }
   }
@@ -794,7 +862,7 @@ input[type=text], select {
   position: fixed;
   top: 4.23em;
   bottom: 0;
-  right: 0;
+  left: 0;
   width: 60%;
   z-index: 10;
   font-size: $second-header-size;

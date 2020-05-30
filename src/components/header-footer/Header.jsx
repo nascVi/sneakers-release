@@ -4,6 +4,9 @@ import Nav from '../ui/Nav'
 import HamburgerElastic from '../thisam/HamburgerElastic'
 import SideBar from './SideBar'
 import {Fade} from 'react-reveal'
+
+// import logo from "./imgs/logo.png"
+
 class Header extends Component {
     state = {
         showSideBar: false,
@@ -20,11 +23,13 @@ class Header extends Component {
         <Fade top delay={500}>
             <header className="header">
                 <div className="wrapper wrapper--header">
+                <HamburgerElastic onClick={this.showSideBar} isActive={this.state.showSideBar} barColor="#bc032b" buttonWidth={16} toggleButton={this.isActive} className="header__menu" />
                     <div className="header__logo-link">
-                        <Link to="/" className="logo"></Link>
+                        <Link to="/" className="logo">
+                            {/* <img src={logo} className="logoImg" alt="brand logo"/> */}
+                        </Link>
                     </div>
                     <Nav context="header" />
-                    <HamburgerElastic onClick={this.showSideBar} isActive={this.state.showSideBar} barColor="white" buttonWidth={16} toggleButton={this.isActive} className="header__menu" />
                     <SideBar showSideBar={showSideBar} />
                 </div>
             </header>
