@@ -25,7 +25,7 @@ $button-col: hsl(0, 0%, 56%);
 // BREAKPOINTS
 
 $large: "only screen and (max-width : 1370px)";
-$medium: "only screen and (max-width : 812px)";
+$medium: "only screen and (max-width : 768px)";
 $small: "only screen and (max-width : 430px)";
 
 @keyframes hovering {
@@ -137,7 +137,7 @@ input[type=text], select {
 
 .home {
   &__hero {
-    height: 100vh;
+    height: 60vh;
     background: $sneakyLinear;
 
     @media #{$small} {
@@ -148,19 +148,23 @@ input[type=text], select {
 
   &__caption {
     font-size: $third-header-size;
+    margin-left: 10vh;
+    height: 16px;
     color: $main-back;
     transition: all 0.3s ease;
+    text-align: center;
     z-index: 99;
     cursor: pointer;
 
     @media #{$large} {
-      font-size: $third-header-size;
-      margin-top: 7em;
+      font-size: 16px;
+      margin-top: 4em;
+      text-align: center;
     }
 
     @media #{$medium} {
       font-size: $third-header-size;
-      margin-top: 7em;
+      margin-top: 5em;
     }
 
     @media #{$small} {
@@ -179,6 +183,7 @@ input[type=text], select {
 
   &__caption-hint {
     text-align: right;
+    margin-left: 10vh;
     font-size: 10px;
     color: $main-back;
     // z-index: 99;
@@ -193,9 +198,11 @@ input[type=text], select {
   }
 
   &__scroll-down {
-    width: 50px;
-    height: 19.5px;
+    width: 30px;
+    height: 16px;
+    margin-left: 10vh;
     background: url("/img/scroll.png") no-repeat center;
+    background-size: 25px;
     padding-bottom: 50px;
     animation: hovering 1s ease-in-out infinite;
     cursor: pointer;
@@ -207,9 +214,11 @@ input[type=text], select {
 
     &:hover {
       background: url("/img/scrollHover.png") no-repeat center;
+      background-size: 25px;
 
       @media #{$medium} {
         background: url("/img/scrollHover.png") no-repeat center;
+        background-size: 25px;
   
       }
     }
@@ -218,7 +227,7 @@ input[type=text], select {
 
 .wrapper {
   margin: 0 auto;
-  max-width: 1364px;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -228,7 +237,7 @@ input[type=text], select {
   flex-wrap: wrap;
 
   @media #{$large} {
-    padding: 60px 20px;
+    padding: 0 40px 0 0;
   }
 
 
@@ -268,27 +277,28 @@ input[type=text], select {
 }
 
 .logo {
-  width: 1000px;
-  height: 550px;
+  width: 80%;
+  height: 300px;
   background: url("/img/logo.png") center repeat no-repeat;
   background-repeat: no-repeat;
-  background-size: 800px;
+  background-size: 400px;
   z-index: 1;
 
   @media #{$medium} {
-    width: 200px;
+    width: 80%;
     height: 120px;
     background-repeat: no-repeat;
-    background-size: 220px;
+    background-size: 150px;
     z-index: 1;
   }
 
   @media #{$small} {
+    margin-top: 2vh;
     margin-left: 2vh;
-    width: 400px;
-    height: 75px !important;
+    width: 80%;
+    height: 100px !important;
     background-repeat: no-repeat;
-    background-size: 160px;
+    background-size: 200px;
     z-index: 1;
   }
 }
@@ -303,22 +313,28 @@ input[type=text], select {
 
 .main-nav {
   display: flex;
-  width: 65%;
+  width: 70%;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-left: 2vh;
   flex-grow: 1;
-  font-size: 1.5em;
+  font-size: 1em;
 
   @media #{$medium} {
     flex-grow: 2;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    margin-left: 4vh;  
+  }
+  
+  @media#{$small} {
+    font-size: 15px;
   }
 
   &--header{
-    font-size: 21px;
+    font-size: 18px;
     margin-top: 26px;
     justify-content: flex-start;
 
@@ -348,7 +364,7 @@ input[type=text], select {
     }
 
     @media#{$small} {
-      font-size: 18px;
+      font-size: 15px;
     }
 
     &.active {
@@ -607,7 +623,7 @@ input[type=text], select {
 
 
   &__caption {
-    font-size: 20px !important;
+    font-size: 16px;
     flex-grow: 1;
     flex-basis: 100%;
     display: flex;
