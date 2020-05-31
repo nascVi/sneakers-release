@@ -6,6 +6,8 @@ import { Element, scroller } from 'react-scroll'
 import { Fade } from 'react-reveal'
 import ReactParticles from 'react-particles-js'
 
+import img from './jojos.png'
+
 const Particles = ({ children }) => {
     return (
       <div style={{ position: 'relative' }}>
@@ -80,7 +82,7 @@ const Home = () => {
                         <div className="logo"></div>
                         <Nav context="home" />
                         <div className="home__caption" onClick={() => scrollToLanding('landing')}>
-                            Nos Produits <span role="img" aria-label="jojos">👞</span>
+                            <img src={img} className="airForce1" />
                         </div>
                         <h6 className="home__caption-hint">Ou tick-tap/clickerais-je <span className="home__coffee" role="img" aria-label="coffee">☕</span>!?</h6>
                         <div className="home__scroll-down" onClick={() => scrollToLanding('footer')} ></div>
