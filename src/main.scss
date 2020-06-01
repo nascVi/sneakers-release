@@ -18,7 +18,7 @@ $sideLinear: linear-gradient(
   rgba(2, 0, 36, 0.8) 20%
 );
 $shoesone-grey: rgb(169, 169, 169);
-$shoesone-blue: rgb(32, 141, 167);
+$shoesone-black: #000000;
 $mainPink: #bc032b;
 $caption-size: 34px;
 $header-back: rgb(255, 255, 255);
@@ -61,7 +61,7 @@ body,
   margin: 0;
   border: none;
   font-family: $oswald;
-  color: $shoesone-blue;
+  color: $shoesone-black;
 }
 
 a {
@@ -83,7 +83,7 @@ a {
   }
 
   &:hover {
-      color:$shoesone-blue;
+      color:$shoesone-black;
 
       &::after {
           background: $main-font-col;
@@ -960,7 +960,8 @@ input[type=text], select {
   }
 
   &__video-container {
-    align-self: flex-start;
+    align-self: flex-start center;
+    text-align: center;
   }
 
   &__video {

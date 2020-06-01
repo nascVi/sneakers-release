@@ -1,5 +1,6 @@
 export const boutique = [
     {
+        id: 1,
         type: 'compteurs',
         nom: 'compteur monophasé 1',
         prix: 80,
@@ -7,6 +8,7 @@ export const boutique = [
         quants: ['1', '2', '3', '4', '5']
     },
     {
+        id: 2,
         type: 'compteurs',
         nom: 'Linky',
         prix: 140,
@@ -14,6 +16,7 @@ export const boutique = [
         quants: ['1', '2', '3', '4', '5']
     },
     {
+        id: 3,
         type: 'compteurs',
         nom: 'compteur monophasé direct häger',
         prix: 97,
@@ -21,6 +24,7 @@ export const boutique = [
         quants: ['1', '2', '3', '4', '5']
     },
     {
+        id: 4,
         type: 'cables',
         nom: 'matériel',
         prix: 27.99,
@@ -28,66 +32,12 @@ export const boutique = [
         quants: ['1', '2', '3', '4', '5']
     },
     {
+        id: 5,
         type: 'cables',
         nom: 'matériel',
         prix: 27.99,
         url: './img/bh.jpg',
         quants: ['1', '2', '3', '4', '5']
-    },
-    {
-        type: 'cables',
-        nom: 'matériel',
-        prix: 27.99,
-        url: './img/gh.jpg',
-        quants: ['1', '2', '3', '4', '5']
-    },
-    {
-        type: 'kitsDomotiques',
-        nom: 'matériel',
-        prix: 6.99,
-        url: './img/bwt.jpg',
-        quants: ['1', '2', '3', '4','5']
-    },
-    {
-        type: 'kitsDomotiques',
-        nom: 'matériel',
-        prix: 6.99,
-        url: './img/sb.jpg',
-        quants: ['1', '2', '3', '4','5']
-    },
-    {
-        type: 'kitsDomotiques',
-        nom: 'matériel',
-        prix: 5.99,
-        url: './img/kbh.jpg',
-        quants: ['1', '2']
-    },
-    {
-        type: 'compteurs',
-        nom: 'EC453',
-        prix: 271.76,
-        url: './img/EC453.png',
-        quants: ['1', '2']
-    },
-    {
-        type: 'coffrets',
-        nom: 'matériel',
-        prix: 39.43,
-        url: './img/Coffret-Distributeur.png',
-        quants: ['1', '2']
-    },
-    {
-        type: 'coffrets',
-        nom: 'matériel',
-        prix: 131.11,
-        url: './img/SPN015R.png',
-        quants: ['1', '2']
-    },
-    {
-        type: 'modules',
-        nom: 'TRM691E',
-        prix: 95.17,
-        url: './img/TRM691E.png',
-        quants: ['1', '2']
     }
+
 ]

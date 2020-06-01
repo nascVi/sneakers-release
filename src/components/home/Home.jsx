@@ -92,11 +92,10 @@ const Home = () => {
                         <div className="home__scroll-down" onClick={() => scrollToLanding('footer')} ></div>
                     </div>
                 </div>
-                  <InaSpace>
-                    <Element name="landing">
-                      <Landing />
-                    </Element>
-                  </InaSpace>
+                  <InaSpace />
+                  <Element name="landing">
+                    <Landing />
+                  </Element>
             </Fade>
         </div>
       </Particles>
