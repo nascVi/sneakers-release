@@ -1,4 +1,4 @@
-export const folio = [
+export const cleaning = [
     {
         day: '6j',
         month: 'Avril',

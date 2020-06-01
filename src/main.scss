@@ -17,8 +17,8 @@ $sideLinear: linear-gradient(
   rgba(184, 184, 184, 0.2) 10%,
   rgba(2, 0, 36, 0.8) 20%
 );
-$varela-grey: rgb(169, 169, 169);
-$varela-blue: rgb(32, 141, 167);
+$shoesone-grey: rgb(169, 169, 169);
+$shoesone-blue: rgb(32, 141, 167);
 $mainPink: #bc032b;
 $caption-size: 34px;
 $header-back: rgb(255, 255, 255);
@@ -61,7 +61,7 @@ body,
   margin: 0;
   border: none;
   font-family: $oswald;
-  color: $varela-blue;
+  color: $shoesone-blue;
 }
 
 a {
@@ -83,7 +83,7 @@ a {
   }
 
   &:hover {
-      color:$varela-blue;
+      color:$shoesone-blue;
 
       &::after {
           background: $main-font-col;
@@ -282,6 +282,10 @@ input[type=text], select {
       padding: 4px 20px;
     }
 
+    @media #{$medium} {
+      height: 3em;
+    }
+
     @media #{$small} {
       padding: 0;
     }
@@ -313,7 +317,7 @@ input[type=text], select {
   background: url("/img/logo.png") center repeat no-repeat;
   background-repeat: no-repeat;
   background-size: 300px;
-  z-index: 1;
+  z-index: 99;
 
 
   @media #{$larger}{
@@ -327,7 +331,7 @@ input[type=text], select {
     height: 120px;
     background-repeat: no-repeat;
     background-size: 150px;
-    z-index: 1;
+    // z-index: 99;
   }
 
   @media #{$small} {
@@ -337,7 +341,7 @@ input[type=text], select {
     height: 100px !important;
     background-repeat: no-repeat;
     background-size: 190px;
-    z-index: 1;
+    z-index: 99;
   }
 }
 
@@ -387,6 +391,7 @@ input[type=text], select {
 
     @media#{$medium} {
       display: none;
+      height: 80px;
     }
 
     >a {
@@ -395,10 +400,11 @@ input[type=text], select {
   }
 
   &--sidebar {
+    // display: flex;
     margin-top: 80px;
     margin-left: 0;
     padding-top: 22px;
-    background-color: $sideLinear !important;
+    background-color: $sideLinear;
     width: 80%;
   }
 
@@ -644,14 +650,14 @@ input[type=text], select {
     // }
   }
 
-  &--realisation {
+  &--creative {
     > div {
       filter: brightness(5);
     }
   }
 }
 
-.realisation {
+.creative {
   max-width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -791,7 +797,7 @@ input[type=text], select {
 
     &__pic {
       font-size: 13px;
-      border-bottom: 1px solid $varela-grey;
+      border-bottom: 1px solid $shoesone-grey;
       font-family: $arial;
       color: $main-back;
       list-style-type: none;
@@ -962,7 +968,7 @@ input[type=text], select {
   }
 }
 
-.varela {
+.shoesone {
   max-width: 1088;
 
   &__year {
@@ -992,7 +998,7 @@ input[type=text], select {
   }
 
   &__item:first-of-type {
-    .varela__year {
+    .shoesone__year {
        margin-top: 0;
        &::before {
          display: none;

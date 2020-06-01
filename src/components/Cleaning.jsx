@@ -1,27 +1,27 @@
 import React from 'react'
-import { folio } from '../data/folio'
+import { cleaning } from '../data/cleaning'
 import Button from './ui/Button'
 import { Flip } from 'react-reveal'
 
-const Folio = () => {
+const Cleaning = () => {
     return (
         <div className="wrapper">
-            <div className="folio">
-                {folio.map((folioItem, i) => {
-                    const {day, month, location} = folioItem
+            <div className="cleaning">
+                {cleaning.map((cleaningItem, i) => {
+                    const {day, month, location} = cleaningItem
                     return (
                         <Flip delay={i*80} right key={i}>
-                            <div className="folio__item">
-                                <div className="folio__date">
-                                    <div className="folio__day">
+                            <div className="cleaning__item">
+                                <div className="cleaning__date">
+                                    <div className="cleaning__day">
                                         {day}
                                     </div>
-                                    <div className="folio__month">
+                                    <div className="cleaning__month">
                                         {month}
                                     </div>
                                 </div>
-                                <div className="folio__details">
-                                    <div className="folio__location">
+                                <div className="cleaning__details">
+                                    <div className="cleaning__location">
                                         {location}
                                     </div>
                                     <Button text="CONSULTER"/>
@@ -35,4 +35,4 @@ const Folio = () => {
     )
 }
 
-export default Folio
+export default Cleaning

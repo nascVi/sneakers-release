@@ -12,7 +12,7 @@ const Nav = props => {
             <NavLink className={getClassName('/')} to="/shoesone">Shoesone</NavLink>
             <NavLink className={getClassName('/boutique')} exact to="/boutique">Boutique</NavLink>
             <NavLink className={getClassName('/custom')} exact to="/custom">Custom</NavLink>
-            <NavLink className={getClassName('/sav')} exact to="/sav">SAV</NavLink>
+            <NavLink className={getClassName('/cleaning')} exact to="/cleaning">Cleaning</NavLink>
         </div>
     )
 }
