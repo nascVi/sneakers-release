@@ -20,8 +20,11 @@ const Particles = ({ children }) => {
               size: {
                 value: 3
               },
+              shape:{
+                type: "edge"
+              },
               color: {
-                value: "#4CD9E4"
+                value: "#000000"
               },
               move: {
                 random: true,
@@ -58,6 +61,7 @@ function InaSpace({ children }) {
     return (
         <div className="innerSpace">
             <div className="iS-body">{children}</div>
+            {/* Check main for mobiles responsives */}
         </div>
     );
 }
@@ -90,7 +94,7 @@ const Home = () => {
                 </div>
                   <InaSpace>
                     <Element name="landing">
-                        <Landing />
+                      <Landing />
                     </Element>
                   </InaSpace>
             </Fade>
