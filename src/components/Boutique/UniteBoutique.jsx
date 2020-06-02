@@ -31,21 +31,21 @@ class UniteBoutique extends Component {
         const {quantErr, selectedQuant, choisi} = this.state;
         return (
             <div className={`boutique__unite ${choisi ? 'boutique__unite--favorite' : ''}`}>
-                <img src={url} alt={type} className="shop__img" />
+                <img src={url} alt={type} className="boutique__img" />
                 <div className="boutique__nom">{nom}</div>
                 <div className="boutique__prix">{prix}€</div>
                 <div className="boutique__details">
                     {(quantErr && !selectedQuant) && (
                         <Fade duration={500}>
-                            <div className="boutique__quant-error">
-                                Please select a size first
+                            <div className="boutique__taille-err">
+                                Il faut une taille avant de valider
                             </div>
                         </Fade>
                     )}
                     <Quants clickHandler={this.handleQuantChange} quants={quants} selectedQuant={selectedQuant} />
                     <Prix />
                 </div>
-                <Button clickHandler={this.handleChoix} text={choisi ? 'Dans le dossier' : 'Choix'} />
+                <Button clickHandler={this.handleChoix} text={choisi ? 'Valider mon panier' : 'Ajouter'} />
             </div>
 
         );

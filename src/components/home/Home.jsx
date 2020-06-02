@@ -116,7 +116,7 @@ const Home = () => {
                         <div className="home__caption" onClick={() => scrollToLanding('landing')}>
                             <img src={img} className="airForce1" alt="af1" />
                         </div>
-                        <h6 className="home__caption-hint">Ou tick-tap/clickerais-je <span className="home__coffee" role="img" aria-label="coffee">☕</span>!?</h6>
+                        <h6 className="home__caption-hint">Sneakers par excellence<span className="home__coffee" role="img" aria-label="coffee"></span></h6>
                         <div className="home__scroll-down" onClick={() => scrollToLanding('footer')} ></div>
                     </div>
                 </div>

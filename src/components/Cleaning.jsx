@@ -8,23 +8,27 @@ const Cleaning = () => {
         <div className="wrapper">
             <div className="cleaning">
                 {cleaning.map((cleaningItem, i) => {
-                    const {day, month, location} = cleaningItem
+                    const {name, url, description, disponible, prix} = cleaningItem
                     return (
                         <Flip delay={i*80} right key={i}>
                             <div className="cleaning__item">
-                                <div className="cleaning__date">
-                                    <div className="cleaning__day">
-                                        {day}
+                                <div className="cleaning__name">
+                                {name}
+                                    <div className="cleaning__thumbnail">
+                                        <img src={url} alt={name} className="cleaning__img" />
                                     </div>
-                                    <div className="cleaning__month">
-                                        {month}
+                                    <div className="cleaning__description">
+                                        {description}
                                     </div>
                                 </div>
                                 <div className="cleaning__details">
-                                    <div className="cleaning__location">
-                                        {location}
+                                    <div className="cleaning__disponible">
+                                        {disponible}
                                     </div>
-                                    <Button text="CONSULTER"/>
+                                    <div className="cleaning__prix">
+                                        {prix}€/h(si applicable)
+                                    </div>
+                                    <Button text="Booker"/>
                                 </div>
                             </div>
                         </Flip>

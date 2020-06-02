@@ -4,10 +4,10 @@ import { Fade } from 'react-reveal'
 import UniteBoutique from './UniteBoutique'
 
 const Boutique = (id) => {
-    const compteursBoutique = boutique.filter(unite => unite.type === 'compteurs');
-    const cablesBoutique = boutique.filter(unite => unite.type === 'cables');
-    const kitsDomotiqueBoutique = boutique.filter(unite => unite.type === 'kitsDomotiques');
-    const coffretsBoutique = boutique.filter(unite => unite.type === 'coffrets');
+    const knitsBoutique = boutique.filter(unite => unite.type === 'knits');
+    const jordansBoutique = boutique.filter(unite => unite.type === 'jordans');
+    const maxsBoutique = boutique.filter(unite => unite.type === 'maxs');
+    const zoomsBoutique = boutique.filter(unite => unite.type === 'zooms');
 
     const renderUnites = unitesBoutique => (
         unitesBoutique.map((uniteBoutique, i) => <UniteBoutique {...uniteBoutique} key={i} />)
@@ -15,32 +15,33 @@ const Boutique = (id) => {
     return (
         <div className="wrapper">
             <div className="boutique">
-                <h1>MATERIEL QUE NOUS RECOMMANDONS</h1>
-                <Fade right delay={id*80}>
-                    <h3>COMPTAGES & GESTION</h3>
-                    <div className="boutique__range">
-                        {renderUnites(compteursBoutique)}
-                    </div>
-                </Fade>
+                <h1>Les Produits en boutique</h1>
                 <Fade left delay={id*80}>
                     <br />
-                    <h3>APPAREILLAGE & MODULES</h3>
+                    <h3>Jordans</h3>
                     <div className="boutique__range">
-                        {renderUnites(cablesBoutique)}
+                        {renderUnites(jordansBoutique)}
                     </div>
                 </Fade>
                 <Fade right delay={id*80}>
                     <br />
-                    <h3>KITS DOMOTIQUES</h3>
+                    <h3>Maxs</h3>
                     <div className="boutique_range">
-                        {renderUnites(kitsDomotiqueBoutique)}
+                        {renderUnites(maxsBoutique)}
+                    </div>
+                </Fade>
+                <Fade right delay={id*80}>
+                    <br />
+                    <h3>Knits</h3>
+                    <div className="boutique__range">
+                        {renderUnites(knitsBoutique)}
                     </div>
                 </Fade>
                 <Fade left delay={id*80}>
                     <br />
-                    <h3>DISTRIBUTION D'ENERGIE</h3>
+                    <h3>Zooms</h3>
                     <div className="boutique_range">
-                        {renderUnites(coffretsBoutique)}
+                        {renderUnites(zoomsBoutique)}
                     </div>
                 </Fade>
             </div>

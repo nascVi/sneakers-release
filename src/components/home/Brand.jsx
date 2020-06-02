@@ -28,18 +28,19 @@ import { Fade } from 'react-reveal'
 //     }
 //   }
 // `
+
 function Brand(id, image, price, date, info, title) {
   return (
     // <StaticQuery
     //   query={getBrands}
     //   render={data => {
     //     return (
-          <section className="">
-            <div className="container">
+          <section>
+            <div className="wrapper">
               <Fade>
-                <h1>Notre choix des marques</h1>
+              <h1>Notre choix des marques</h1>
               </Fade>
-              <div className="">
+              <div className="brand">
                 {/* {data.brands.edges.map(({ node: brand }) => {
                 })} */}
                 <a href="/#">
