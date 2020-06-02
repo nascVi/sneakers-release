@@ -1,6 +1,6 @@
-import * as contentful from 'contentful'
+import { createClient} from 'contentful'
 
-export const client = contentful.createClient({
+export default createClient({
   space: process.env.APP_API_SPACE,
   accessToken: process.env.APP_ACCESS_TOKEN
 });

@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from '../ui/Nav'
 import BackgroundVideo from '../BackgroundVideo/BackgroundVideo'
 
 import img from './jojos.png'
 
 import ReactParticles from 'react-particles-js'
-import { Element, scroller } from 'react-scroll'
+// import * as contentful from 'contentful'
+import { Element,scroller } from 'react-scroll'
 import { Fade } from 'react-reveal'
 
 import Info from '../Info'
-// import Brands from './Brands'
+import Brand from './Brand'
 import Landing from './Landing'
 import Contact from '../Contact'
 
@@ -62,6 +63,11 @@ const Particles = ({ children }) => {
     );
 }
 
+const client = require('contentful').createClient({
+  space: "rw6a7adgd9jf",
+  accessToken:"gdss2r8osTVxqx8ijgmUDrroXrAm1jlM_mTZYaA"
+});
+
 function InaSpace({ children }) {
     return (
         <div className="innerSpace">
@@ -72,14 +78,31 @@ function InaSpace({ children }) {
 }
   
 const Home = () => {
-
-    const scrollToLanding = elem => {
-        scroller.scrollTo(elem, {
-            duration: 800,
-            delay: 100,
-            smooth: true
-        })
+  
+  const [ShoesOneBrands, setShoesOneBrands] = useState([])
+  
+  useEffect(() => {
+    async function fetchEntries() {
+      const entries = await client.getEntries()
+      if (entries.items) return entries.items
+      console.log(`Error getting Entries for ${ShoesOneBrands}.`)
     }
+
+    async function getShoesOneBrands() {
+      const allShoesOneBrands = await fetchEntries()
+      setShoesOneBrands([...allShoesOneBrands])
+    }
+    getShoesOneBrands()
+  }, [ShoesOneBrands])
+
+
+  const scrollToLanding = elem => {
+      scroller.scrollTo(elem, {
+          duration: 800,
+          delay: 100,
+          smooth: true
+      })
+  }
 
     return (
       <Particles>
@@ -98,9 +121,19 @@ const Home = () => {
                     </div>
                 </div>
                 <InaSpace />
-                {/* <Element name="brands">
-                  <Brands />
-                </Element> */}
+                <Element name="brand">
+                {ShoesOneBrands.length > 0
+                ? ShoesOneBrands.map(p => (
+                    <Brand
+                      alt={p.fields.alt}
+                      date={p.fields.date}
+                      key={p.fields.title}
+                      image={p.fields.image}
+                      title={p.fields.title}                      
+                    />
+                  ))
+                : null}
+                </Element>
                 <Element name="landing">
                   <Landing />
                 </Element>
