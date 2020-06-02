@@ -1,5 +1,4 @@
 import React from 'react'
-import Info from './Info'
 import Socials from '../ui/Socials'
 
 const Footer = () => {
@@ -10,8 +9,10 @@ const Footer = () => {
                 </div>
                     <div className="pro-ref-logo"></div>
                 <div className="footer__contactForm">
-                    <h3>PRISE DE CONTACT</h3>
-                    <Info />
+                    <h3>SAV</h3>
+                </div>
+                <div className="footer__contactForm">
+                    <h3>Mentions Legales</h3>
                 </div>
                 <div className="footer__social">
                     <h3>RESEAUX SOCIAUX</h3>

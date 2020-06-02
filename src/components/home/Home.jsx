@@ -1,12 +1,16 @@
 import React from 'react'
 import Nav from '../ui/Nav'
 import BackgroundVideo from '../BackgroundVideo/BackgroundVideo'
-import Landing from './Landing'
-import { Element, scroller } from 'react-scroll'
-import { Fade } from 'react-reveal'
-import ReactParticles from 'react-particles-js'
 
 import img from './jojos.png'
+
+import ReactParticles from 'react-particles-js'
+import { Element, scroller } from 'react-scroll'
+import { Fade } from 'react-reveal'
+
+import Info from '../Info'
+import Landing from './Landing'
+import Contact from '../Contact'
 
 const Particles = ({ children }) => {
     return (
@@ -92,10 +96,16 @@ const Home = () => {
                         <div className="home__scroll-down" onClick={() => scrollToLanding('footer')} ></div>
                     </div>
                 </div>
-                  <InaSpace />
-                  <Element name="landing">
-                    <Landing />
-                  </Element>
+                <InaSpace />
+                <Element name="landing">
+                  <Landing />
+                </Element>
+                <Element name="info">
+                  <Info />
+                </Element>
+                <Element name="contact">
+                  <Contact />
+                </Element>
             </Fade>
         </div>
       </Particles>
