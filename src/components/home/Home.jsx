@@ -9,6 +9,7 @@ import { Element, scroller } from 'react-scroll'
 import { Fade } from 'react-reveal'
 
 import Info from '../Info'
+// import Brands from './Brands'
 import Landing from './Landing'
 import Contact from '../Contact'
 
@@ -97,6 +98,9 @@ const Home = () => {
                     </div>
                 </div>
                 <InaSpace />
+                {/* <Element name="brands">
+                  <Brands />
+                </Element> */}
                 <Element name="landing">
                   <Landing />
                 </Element>

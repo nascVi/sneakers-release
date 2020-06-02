@@ -26,7 +26,7 @@ $main-pic: $header-back url("/video/Pexels Videos 2675511.mp4") 0 bottom no-repe
 $footer-font-col: hsl(0, 0%, 35%);
 $footer-caption-col: hsl(0, 0%, 19%);
 $arial: Arial, Helvetica, sans-serif;
-$oswald: "Oswald", Arial, Helvetica, sans-serif;
+$AdPro: "Advent Pro", sans-serif !important;
 $button-col: hsl(0, 0%, 56%); 
 
 // BREAKPOINTS
@@ -60,7 +60,7 @@ body,
   padding: 0;
   margin: 0;
   border: none;
-  font-family: $oswald;
+  font-family: $AdPro;
   color: $shoesone-black;
 }
 
@@ -642,7 +642,7 @@ input[type=text], select {
   background: $button-col;
   border: none;
   color: $main-font-col;
-  font-family: $oswald;
+  font-family: $AdPro;
   text-transform: uppercase;
   font-size: 21px;
   width: 195px;
