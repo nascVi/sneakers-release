@@ -1,13 +1,21 @@
 import React from 'react'
 import Socials from '../ui/Socials'
+import { useScrollToTop } from '../hooks/scrollToTop';
 
-const Footer = () => {
+const Footer = (props) => {
+    const setScrollToTop = useScrollToTop(true);
     return (
         <footer className="footer">
             <div className="wrapper wrapper--footer">
-                <div className="footer__logos">
+                {/* <div>
+                </div> */}
+                <div 
+                className="pro-ref-logo"
+                key={props}
+                onClick={() => setScrollToTop(true)}
+                >
+
                 </div>
-                    <div className="pro-ref-logo"></div>
                 <div className="footer__contactForm">
                     <h3>SAV</h3>
                 </div>

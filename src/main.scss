@@ -350,6 +350,7 @@ input[type=text], select {
   height: 550px;
   background: url("/img/Wlogo.png") center repeat no-repeat;
   background-size: 250px;
+  z-index: 99;
 
 }
 
@@ -480,6 +481,7 @@ input[type=text], select {
     background: url("/img/Wlogo.png") center center no-repeat;
     background-size: 700px;
     margin-bottom: 42px;
+    cursor: pointer;
 
     @media #{$medium} {
       width: 250px !important;
