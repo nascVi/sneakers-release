@@ -16,6 +16,8 @@ const Shoesone = () => {
                                     <div className="shoesone__title">{title}</div>
                                 <div className="shoesone__text">{text}</div>
                             </div>
+
+                            Image goes here
                         </Fade>
                     )
                 })}
