@@ -9,7 +9,7 @@ const Footer = (props) => {
             <div className="wrapper wrapper--footer">
                 {/* <div>
                 </div> */}
-                <div 
+                <div
                 className="pro-ref-logo"
                 key={props}
                 onClick={() => setScrollToTop(true)}
@@ -26,7 +26,7 @@ const Footer = (props) => {
                     <h3>RESEAUX SOCIAUX</h3>
                     <Socials />
                     <div className="footer__copy">
-                        ©2020 Varela Electricité - lpChamps` make
+                        ©2020 Shoesone - lpChamps` designers
                     </div>
                 </div>
                 <br />
