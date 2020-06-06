@@ -25,7 +25,10 @@
     "react-scroll": "^1.7.16",
     "react-thanos-snap": "^0.0.7",
     "serve": "^11.3.0",
+    "shopify-buy": "^2.10.0",
     "styled-components": "^5.1.0",
+    "styletron-engine-atomic": "^1.4.6",
+    "styletron-react": "^5.2.7",
     "videojs-youtube": "^2.6.1",
     "yarn": "^1.22.4"
   },
