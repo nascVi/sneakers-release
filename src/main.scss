@@ -345,13 +345,89 @@ input[type=text], select {
   }
 }
 
-.flogo {
-  width: 1000px;
-  height: 550px;
-  background: url("/img/Wlogo.png") center repeat no-repeat;
-  background-size: 250px;
-  z-index: 99;
+.header {
+  background: $sneakyLinear;
+  height: 110px;
+  position: relative;
+  z-index: 10;
 
+  @media #{$small} {
+    margin: 0;
+    height: 80px;
+  }
+
+  .logo {
+    margin-top: 7%;
+    padding: 0;
+    height: 73px;
+    width: 150px;
+    background-size: 150px;
+    margin-right: 85px;
+
+    &::after {
+      background-color: transparent;
+      border: none;
+      text-decoration: none;
+    }
+
+    @media #{$large} {
+      background-size: 120px;
+      margin: 0;
+    }
+
+    @media #{$small} {
+      margin-top: 0;
+      background-size: 110px;
+      width: 100px !important;
+      height: 80px !important;
+    }
+    
+    @media #{$medium} {
+      width: 120px;
+      margin: 27 0;
+    }
+  }
+
+  &__logo-link {
+    height: 20px;
+    background-size: 80px;
+
+    @media #{$small} {
+      width: 10% !important;
+    }
+
+    @media #{$medium} {
+      width: 95%;
+    }
+
+    @media #{$large} {
+      width: 250px;
+    }
+
+    &::after {
+        display: none;
+    }
+  }
+
+  &__menu {
+    padding: 28px !important;
+    text-align: right;
+    z-index: 11;
+    display: none !important;
+
+    @media #{$medium} {
+      color: $main-back;
+      display: block !important;
+    }
+
+    @media #{$small} {
+      color: $main-back;
+      display: block !important;
+      height: 5px;
+      width: 5px;
+      align-self: center center;
+    }
+  }
 }
 
 .main-nav {
@@ -469,6 +545,15 @@ input[type=text], select {
     @media #{$large} {
       order: 3;
     }
+  }
+
+  .flogo {
+    width: 1000px;
+    height: 550px;
+    background: url("/img/Wlogo.png") center repeat no-repeat;
+    background-size: 250px;
+    z-index: 99;
+  
   }
 
   .logo {
@@ -893,88 +978,6 @@ input[type=text], select {
 
   &__next {
     background: url('/img/next-track.png');
-  }
-}
-
-.header {
-  background: $sneakyLinear;
-  height: 110px;
-  position: relative;
-  z-index: 10;
-
-  @media #{$small} {
-    margin: 0;
-    height: 80px;
-  }
-
-  .logo {
-    margin-top: 7%;
-    padding: 0;
-    height: 73px;
-    width: 150px;
-    background-size: 150px;
-    margin-right: 85px;
-
-    &::after {
-      background-color: transparent;
-      border: none;
-      text-decoration: none;
-    }
-
-    @media #{$large} {
-      background-size: 120px;
-      margin: 0;
-    }
-
-    @media #{$small} {
-      margin-top: 0;
-      background-size: 110px;
-      width: 100px !important;
-      height: 80px !important;
-    }
-    
-    @media #{$medium} {
-      width: 120px;
-      margin: 27 0;
-    }
-  }
-
-  &__logo-link {
-    height: 20px;
-    background-size: 80px;
-
-    @media #{$small} {
-      width: 10% !important;
-    }
-
-    @media #{$medium} {
-      width: 95%;
-    }
-
-    @media #{$large} {
-      width: 250px;
-    }
-
-    &::after {
-        display: none;
-    }
-  }
-
-  &__menu {
-    padding: 28px !important;
-    text-align: right;
-    z-index: 11;
-    display: none !important;
-
-    @media #{$medium} {
-      color: $main-back;
-      display: block !important;
-    }
-
-    @media #{$small} {
-      color: $main-back;
-      display: block !important;
-    }
   }
 }
 
