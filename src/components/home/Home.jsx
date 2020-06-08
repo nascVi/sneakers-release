@@ -1,4 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { ShopContext } from '../context/shopContext'
+import { Container, Text, Div, Row, Col } from 'atomize'
+import { Link } from 'react-router-dom'
+
+
 import Nav from '../ui/Nav'
 import BackgroundVideo from '../BackgroundVideo/BackgroundVideo'
 
@@ -63,10 +68,10 @@ const Particles = ({ children }) => {
     );
 }
 
-const client = require('contentful').createClient({
-  space: "rw6a7adgd9jf",
-  accessToken:"gdss2r8osTVxqx8ijgmUDrroXrAm1jlM_mTZYaA"
-});
+// const client = require('contentful').createClient({
+//   space: "rw6a7adgd9jf",
+//   accessToken:"gdss2r8osTVxqx8ijgmUDrroXrAm1jlM_mTZYaA"
+// });
 
 function InaSpace({ children }) {
     return (
@@ -78,24 +83,9 @@ function InaSpace({ children }) {
 }
   
 const Home = () => {
+
+  const { fetchAllProducts, products } = useContext(ShopContext)
   
-  const [ShoesOneBrands, setShoesOneBrands] = useState([])
-  
-  useEffect(() => {
-    async function fetchEntries() {
-      const entries = await client.getEntries()
-      if (entries.items) return entries.items
-      console.log(`Error getting Entries for ${ShoesOneBrands}.`)
-    }
-
-    async function getShoesOneBrands() {
-      const allShoesOneBrands = await fetchEntries()
-      setShoesOneBrands([...allShoesOneBrands])
-    }
-    getShoesOneBrands()
-  }, [ShoesOneBrands])
-
-
   const scrollToLanding = elem => {
       scroller.scrollTo(elem, {
           duration: 800,
@@ -103,6 +93,33 @@ const Home = () => {
           smooth: true
       })
   }
+  
+  useEffect(() => {
+    fetchAllProducts()
+    return () => {
+
+    };
+  }, [fetchAllProducts])
+
+  if(!products) return <div>Loading...</div>
+
+  // const [ShoesOneBrands, setShoesOneBrands] = useState([])
+  
+  // useEffect(() => {
+  //   async function fetchEntries() {
+  //     const entries = await client.getEntries()
+  //     if (entries.items) return entries.items
+  //     console.log(`Error getting Entries for ${ShoesOneBrands}.`)
+  //   }
+
+  //   async function getShoesOneBrands() {
+  //     const allShoesOneBrands = await fetchEntries()
+  //     setShoesOneBrands([...allShoesOneBrands])
+  //   }
+  //   getShoesOneBrands()
+  // }, [ShoesOneBrands])
+
+
 
     return (
       <Particles>
@@ -121,20 +138,31 @@ const Home = () => {
                     </div>
                 </div>
                 <InaSpace />
-                <Element name="brand">
-                {ShoesOneBrands.length > 0
-                ? ShoesOneBrands.map(p => (
-                    <Brand
-                      alt={p.fields.alt}
-                      date={p.fields.date}
-                      key={p.fields.title}
-                      image={p.fields.image}
-                      title={p.fields.title}                      
-                    />
-                  ))
-                : null}
-                </Element>
                 <Element name="landing">
+                <Element name="brand">
+                  <Container>
+                    <Row>
+                      {products.map(product => (
+                        <Col key={product.id}>
+                          <Link to={'/product'}>
+                      {/* {ShoesOneBrands.length > 0
+                        ? ShoesOneBrands.map(p => (
+                          <Brand
+                          alt={p.fields.alt}
+                          date={p.fields.date}
+                          key={p.fields.title}
+                          image={p.fields.image}
+                          title={p.fields.title}                      
+                          />
+                          ))
+                        : null} */}
+                        {test}
+                        </Link>
+                        </Col>
+                        ))}
+                      </Row>
+                     </Container>
+                  </Element>
                   <Landing />
                 </Element>
                 <Element name="info">
