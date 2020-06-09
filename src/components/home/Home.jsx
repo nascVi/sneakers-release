@@ -1,7 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { ShopContext } from '../context/shopContext'
-import { Container, Text, Div, Row, Col } from 'atomize'
-import { Link } from 'react-router-dom'
+import React, { /*useContext ,*/ useEffect, useState } from 'react'
+// import { Link } from 'react-router-dom'
 
 
 import Nav from '../ui/Nav'
@@ -10,7 +8,7 @@ import BackgroundVideo from '../BackgroundVideo/BackgroundVideo'
 import img from './jojos.png'
 
 import ReactParticles from 'react-particles-js'
-// import * as contentful from 'contentful'
+import * as contentful from 'contentful'
 import { Element,scroller } from 'react-scroll'
 import { Fade } from 'react-reveal'
 
@@ -69,8 +67,8 @@ const Particles = ({ children }) => {
 }
 
 // const client = require('contentful').createClient({
-//   space: "rw6a7adgd9jf",
-//   accessToken:"gdss2r8osTVxqx8ijgmUDrroXrAm1jlM_mTZYaA"
+//   space: process.env.BOUTIQUE_APP_SPACE,
+//   accessToken:process.env.BOUTIQUE_APP_ACCESS
 // });
 
 function InaSpace({ children }) {
@@ -83,8 +81,6 @@ function InaSpace({ children }) {
 }
   
 const Home = () => {
-
-  const { fetchAllProducts, products } = useContext(ShopContext)
   
   const scrollToLanding = elem => {
       scroller.scrollTo(elem, {
@@ -93,15 +89,6 @@ const Home = () => {
           smooth: true
       })
   }
-  
-  useEffect(() => {
-    fetchAllProducts()
-    return () => {
-
-    };
-  }, [fetchAllProducts])
-
-  if(!products) return <div>Loading...</div>
 
   // const [ShoesOneBrands, setShoesOneBrands] = useState([])
   
@@ -140,29 +127,9 @@ const Home = () => {
                 <InaSpace />
                 <Element name="landing">
                 <Element name="brand">
-                  <Container>
-                    <Row>
-                      {products.map(product => (
-                        <Col key={product.id}>
-                          <Link to={'/product'}>
-                      {/* {ShoesOneBrands.length > 0
-                        ? ShoesOneBrands.map(p => (
-                          <Brand
-                          alt={p.fields.alt}
-                          date={p.fields.date}
-                          key={p.fields.title}
-                          image={p.fields.image}
-                          title={p.fields.title}                      
-                          />
-                          ))
-                        : null} */}
-                        {test}
-                        </Link>
-                        </Col>
-                        ))}
-                      </Row>
-                     </Container>
-                  </Element>
+                <Brand />
+                Loading...
+                </Element>
                   <Landing />
                 </Element>
                 <Element name="info">
