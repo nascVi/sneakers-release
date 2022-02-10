@@ -12,7 +12,7 @@
     "atomize": "^1.0.26",
     "contentful": "^7.14.4",
     "graphql": "^15.1.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "now": "^19.0.1",
     "react": "^16.13.1",
     "react-animated-burgers": "^1.2.7",
